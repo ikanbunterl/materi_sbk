@@ -3,47 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio Kreatif SMK - Kelas 10</title>
+    <title>Kisi-Kisi Seni Rupa SMA/SMK</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2e7d32; /* Hijau SMK */
-            --secondary: #1565c0; /* Biru kompetensi */
-            --light: #f5f5f5;
+            --primary: #5e35b1;
+            --secondary: #af4480;
+            --light: #f8f9fa;
             --dark: #212121;
-            --accent: #ff9800; /* Oranye kreatif */
-            --warning: #f57c00;
-            --success: #4caf50;
-            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --accent: #d4e157;
+            --shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
             background-color: #fafafa;
             color: var(--dark);
             line-height: 1.6;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f9fa"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%23e0e0e0" stroke-width="0.5"/></svg>');
-            background-size: 40px 40px;
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(120deg, var(--primary), var(--secondary));
             color: white;
             padding: 1rem 0;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         
         .navbar {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -52,30 +48,21 @@
         }
         
         .logo {
-            font-size: 1.9rem;
-            font-weight: 800;
+            font-size: 1.8rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 12px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            gap: 10px;
         }
         
         .logo i {
             color: var(--accent);
-            font-size: 2.2rem;
-        }
-        
-        .logo span {
-            background: linear-gradient(to right, #fff, #e3f2fd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
         }
         
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 1.8rem;
+            gap: 1.5rem;
         }
         
         .nav-links a {
@@ -84,8 +71,6 @@
             font-weight: 500;
             padding: 0.5rem 0;
             position: relative;
-            font-size: 1.05rem;
-            transition: all 0.3s ease;
         }
         
         .nav-links a::after {
@@ -94,23 +79,18 @@
             bottom: 0;
             left: 0;
             width: 0;
-            height: 3px;
+            height: 2px;
             background: var(--accent);
-            border-radius: 3px;
-            transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition: width 0.3s ease;
         }
         
         .nav-links a:hover::after {
             width: 100%;
         }
         
-        .nav-links a:hover {
-            opacity: 0.9;
-        }
-        
         .hero {
-            background: url('https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover;
-            height: 85vh;
+            background: url('https://images.unsplash.com/photo-1503376780353-7e6e33344ee5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
+            height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -126,107 +106,47 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(0deg, rgba(46, 125, 50, 0.95), rgba(21, 101, 192, 0.85));
+            background: rgba(94, 53, 177, 0.85);
         }
         
         .hero-content {
-            max-width: 900px;
+            max-width: 800px;
             z-index: 1;
             padding: 2rem;
-            animation: fadeIn 1s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         
         .hero h1 {
-            font-size: 3.8rem;
-            margin-bottom: 1.2rem;
-            line-height: 1.2;
-            text-shadow: 0 3px 6px rgba(0,0,0,0.3);
-            letter-spacing: -1px;
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
         
         .hero p {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             margin-bottom: 2rem;
             font-weight: 300;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 0.9rem 2.3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--accent);
-            font-size: 1.05rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        
-        .btn:hover {
-            background: transparent;
-            color: var(--accent);
-            transform: translateY(-4px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: white;
-            margin-left: 1.2rem;
-            border-color: white;
-        }
-        
-        .btn-outline:hover {
-            background: white;
-            color: var(--primary);
         }
         
         section {
-            padding: 5.5rem 2rem;
-            transition: background-color 0.3s ease;
-        }
-        
-        .bg-light {
-            background-color: #f8f9fa;
-        }
-        
-        .bg-white {
-            background-color: white;
-        }
-        
-        .bg-accent {
-            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            padding: 4.5rem 2rem;
         }
         
         .container {
-            max-width: 1280px;
+            max-width: 1100px;
             margin: 0 auto;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3.5rem;
-            position: relative;
+            margin-bottom: 2.5rem;
         }
         
         .section-title h2 {
-            font-size: 2.8rem;
+            font-size: 2.3rem;
             color: var(--primary);
-            display: inline-block;
             position: relative;
-            padding-bottom: 15px;
+            display: inline-block;
+            padding-bottom: 10px;
         }
         
         .section-title h2::after {
@@ -235,325 +155,135 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
+            width: 80px;
+            height: 3px;
             background: var(--accent);
-            border-radius: 2px;
+            border-radius: 3px;
         }
         
-        .section-title p {
-            color: #546e7a;
-            font-size: 1.2rem;
-            margin-top: 1rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .curriculum-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.2rem;
-            margin-top: 2rem;
-        }
-        
-        .curriculum-card {
+        .content-box {
             background: white;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.4s cubic-bezier(0.17, 0.67, 0.35, 0.99);
-            position: relative;
-            border: 1px solid #e0e0e0;
-        }
-        
-        .curriculum-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-            border-color: var(--accent);
-        }
-        
-        .card-header {
-            background: linear-gradient(to right, var(--primary), #4caf50);
-            color: white;
-            padding: 1.4rem 1.8rem;
-            position: relative;
-        }
-        
-        .card-header h3 {
-            font-size: 1.8rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .card-header i {
-            font-size: 2.1rem;
-            min-width: 36px;
-        }
-        
-        .card-body {
+            border-radius: 15px;
             padding: 2rem;
-        }
-        
-        .card-body ul {
-            list-style-type: none;
-            padding-left: 1.2rem;
-        }
-        
-        .card-body li {
-            padding: 0.8rem 0;
-            border-bottom: 1px dashed #e0e0e0;
-            position: relative;
-            padding-left: 2rem;
-            font-size: 1.05rem;
-        }
-        
-        .card-body li:last-child {
-            border-bottom: none;
-        }
-        
-        .card-body li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--success);
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        
-        .smk-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--accent);
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-        }
-        
-        .project-steps {
-            counter-reset: step-counter;
-            margin-left: 2.5rem;
-            margin-top: 1.5rem;
-            position: relative;
-        }
-        
-        .project-steps::before {
-            content: '';
-            position: absolute;
-            left: -27px;
-            top: 12px;
-            height: calc(100% - 12px);
-            width: 3px;
-            background: var(--accent);
-        }
-        
-        .step-item {
-            position: relative;
-            padding-left: 2.5rem;
-            margin-bottom: 1.8rem;
-        }
-        
-        .step-item::before {
-            content: counter(step-counter);
-            counter-increment: step-counter;
-            position: absolute;
-            left: -40px;
-            top: 0;
-            width: 30px;
-            height: 30px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.1rem;
-            border: 3px solid white;
-            box-shadow: 0 0 0 2px var(--primary);
-        }
-        
-        .safety-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .safety-card {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
             box-shadow: var(--shadow);
+            margin-bottom: 2rem;
             transition: all 0.3s ease;
-            border-top: 4px solid var(--warning);
         }
         
-        .safety-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        .content-box:hover {
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
         
-        .safety-icon {
-            font-size: 3.5rem;
-            color: var(--warning);
+        .content-box h3 {
+            color: var(--secondary);
             margin-bottom: 1.2rem;
-        }
-        
-        .business-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .business-card {
-            background: white;
-            border-radius: 16px;
-            padding: 2.2rem;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border-left: 4px solid var(--accent);
-        }
-        
-        .business-card:hover {
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
-        .business-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
             font-size: 1.6rem;
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
-        .business-card h3 i {
-            color: var(--accent);
-        }
-        
-        .tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .tab-btn {
-            background: #e8f5e9;
-            border: none;
-            padding: 0.8rem 1.8rem;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            color: var(--primary);
+        .content-box p {
+            margin-bottom: 1rem;
             font-size: 1.05rem;
         }
         
-        .tab-btn.active, .tab-btn:hover {
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .example-card {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .example-card:hover {
+            background: #e8eaf6;
+            transform: translateY(-5px);
+        }
+        
+        .example-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .technique-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .technique-item {
+            border-left: 4px solid var(--accent);
+            padding-left: 1.2rem;
+        }
+        
+        .styles-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .styles-table th, .styles-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .styles-table th {
             background: var(--primary);
             color: white;
+            font-weight: 600;
         }
         
-        .tab-content {
-            display: none;
-            padding: 2rem;
-            background: white;
-            border-radius: 16px;
-            box-shadow: var(--shadow);
+        .styles-table tr:hover {
+            background: #f5f5f5;
         }
         
-        .tab-content.active {
-            display: block;
-            animation: slideUp 0.5s ease;
+        .styles-table tr:last-child td {
+            border-bottom: none;
         }
         
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .batik-ecoprint {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            margin: 1.5rem 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .comparison-table th {
+            background: var(--secondary);
+            color: white;
         }
         
         footer {
             background: var(--dark);
-            color: #e0e0e0;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            text-align: left;
-        }
-        
-        .footer-col h3 {
             color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            position: relative;
-            padding-bottom: 8px;
-        }
-        
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--accent);
-        }
-        
-        .footer-col ul {
-            list-style: none;
-        }
-        
-        .footer-col ul li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-col ul li a {
-            color: #bdbdbd;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: block;
-            padding: 0.4rem 0;
-        }
-        
-        .footer-col ul li a:hover {
-            color: var(--accent);
-            transform: translateX(5px);
-        }
-        
-        .copyright {
-            margin-top: 2.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #424242;
-            color: #9e9e9e;
-            font-size: 0.95rem;
-        }
-        
-        @media (max-width: 900px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .nav-links {
-                gap: 1.2rem;
-                font-size: 0.95rem;
-            }
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
         }
         
         @media (max-width: 768px) {
@@ -562,59 +292,30 @@
             }
             
             .hero h1 {
-                font-size: 2.4rem;
-            }
-            
-            .hero p {
-                font-size: 1.15rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-            
-            .btn {
-                display: block;
-                margin: 10px auto;
-                width: 90%;
-                max-width: 400px;
-            }
-            
-            .btn-outline {
-                margin-left: 0;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
+                font-size: 2.3rem;
             }
             
             .section-title h2 {
                 font-size: 1.8rem;
             }
-            
-            .card-header h3 {
-                font-size: 1.5rem;
-            }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header & Navigation -->
     <header>
         <nav class="navbar">
             <div class="logo">
-                <i class="fas fa-graduation-cap"></i>
-                <span>Studio Kreatif SMK</span>
+                <i class="fas fa-palette"></i>
+                <span>Kisi-Kisi Seni Rupa</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#kurikulum">Kurikulum</a></li>
-                <li><a href="#proyek">Proyek</a></li>
-                <li><a href="#k3">K3 Seni</a></li>
-                <li><a href="#bisnis">Bisnis</a></li>
-                <li><a href="#portofolio">Portofolio</a></li>
+                <li><a href="#pengertian">Pengertian</a></li>
+                <li><a href="#contoh">Contoh Seni</a></li>
+                <li><a href="#batik">Batik & Ecoprint</a></li>
+                <li><a href="#teknik">Teknik Gambar</a></li>
+                <li><a href="#ciri">Ciri Seni Rupa</a></li>
+                <li><a href="#gaya">Gaya Seni</a></li>
             </ul>
         </nav>
     </header>
@@ -622,360 +323,276 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Kurikulum Seni & Industri Kreatif Kelas 10 SMK</h1>
-            <p>Platform pembelajaran berbasis proyek dengan pendekatan vokasional dan kesiapan kerja</p>
-            <div class="hero-btns">
-                <a href="#kurikulum" class="btn">Lihat Kurikulum</a>
-                <a href="#proyek" class="btn btn-outline">Proyek Industri</a>
+            <h1>Materi Seni Rupa SMA/SMK</h1>
+            <p>Kisi-kisi lengkap sesuai kurikulum: Pengertian seni, teknik menggambar, gaya seni rupa, dan praktik membatik/ecoprint</p>
+        </div>
+    </section>
+
+    <!-- Pengertian Seni -->
+    <section id="pengertian" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pengertian Seni</h2>
+            </div>
+            
+            <div class="content-box">
+                <h3><i class="fas fa-book-open"></i> Definisi Seni</h3>
+                <p><strong>Seni</strong> adalah ekspresi kreatif manusia melalui media visual, audio, atau gerak yang memiliki nilai estetika dan makna. Seni merupakan sarana untuk mengekspresikan perasaan, ide, dan pengalaman hidup.</p>
+                
+                <h3>Menurut Para Ahli:</h3>
+                <ul style="padding-left: 2rem; margin: 1.2rem 0;">
+                    <li><strong>Ki Hajar Dewantara</strong>: "Seni adalah segala perbuatan manusia yang timbul dari perasaan dan bersifat indah, sehingga menggerakkan perasaan manusia lainnya."</li>
+                    <li><strong>Aristoteles</strong>: "Seni adalah peniruan (mimesis) dari kenyataan yang disaring melalui interpretasi manusia."</li>
+                    <li><strong>John Dewey</strong>: "Seni adalah pengalaman yang menyatukan emosi, pikiran, dan lingkungan."</li>
+                </ul>
+                
+                <p><strong>Fungsi Seni</strong>:</p>
+                <ul style="padding-left: 2rem; margin: 1.2rem 0;">
+                    <li><em>Individual</em>: Sarana ekspresi diri dan aktualisasi</li>
+                    <li><em>Sosial</em>: Sarana komunikasi budaya dan identitas</li>
+                    <li><em>Pendidikan</em>: Mengembangkan kreativitas dan apresiasi estetika</li>
+                    <li><em>Komersial</em>: Potensi ekonomi melalui industri kreatif</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Kurikulum SMK -->
-    <section id="kurikulum" class="bg-light">
+    <!-- Contoh Seni -->
+    <section id="contoh" class="bg-white">
         <div class="container">
             <div class="section-title">
-                <h2>Kurikulum Kelas 10 SMK</h2>
-                <p>Selaras dengan KKNI Level 2 dan SKKD (Standar Kompetensi Kerja Nasional Indonesia)</p>
+                <h2>Contoh Seni</h2>
             </div>
             
-            <div class="curriculum-grid">
-                <div class="curriculum-card">
-                    <div class="card-header">
-                        <h3><i class="fas fa-palette"></i> Seni Rupa Terapan</h3>
-                        <div class="smk-badge">KKNI Level 2</div>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Prinsip desain komunikasi visual</li>
-                            <li>Teknik rendering produk kreatif</li>
-                            <li>Anatomi bentuk untuk produk fungsional</li>
-                            <li>Pengolahan tekstur material alami & sintetis</li>
-                            <li>Pengantar desain berkelanjutan (sustainable design)</li>
-                        </ul>
-                    </div>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Seni Rupa</h3>
+                    <p>Lukisan, patung, grafis, instalasi, seni digital</p>
                 </div>
                 
-                <div class="curriculum-card">
-                    <div class="card-header" style="background: linear-gradient(to right, var(--secondary), #1e88e5);">
-                        <h3><i class="fas fa-tshirt"></i> Batik & Ecoprint Vokasional</h3>
-                        <div class="smk-badge">Produktif</div>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Teknik batik tulis dengan standar industri</li>
-                            <li>Ecoprint menggunakan bahan lokal terbarukan</li>
-                            <li>Quality control produk tekstil kreatif</li>
-                            <li>Pewarna alam untuk komersial</li>
-                            <li>Finishing produk batik & ecoprint</li>
-                        </ul>
-                    </div>
+                <div class="example-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Seni Musik</h3>
+                    <p>Lagu tradisional, orkestra, musik kontemporer</p>
                 </div>
                 
-                <div class="curriculum-card">
-                    <div class="card-header" style="background: linear-gradient(to right, #6a1b9a, #9c27b0);">
-                        <h3><i class="fas fa-laptop"></i> Digital Art Fundamentals</h3>
-                        <div class="smk-badge">Teknologi</div>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Pengenalan software desain vektor (CorelDRAW)</li>
-                            <li>Digital sketching untuk konsep produk</li>
-                            <li>Dasar fotografi produk seni</li>
-                            <li>Color management untuk komersial</li>
-                            <li>Portofolio digital dengan Canva/Behance</li>
-                        </ul>
-                    </div>
+                <div class="example-card">
+                    <i class="fas fa-dance"></i>
+                    <h3>Seni Tari</h3>
+                    <p>Tari Saman, balet, tari modern</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Proyek Industri -->
-    <section id="proyek" class="bg-white">
-        <div class="container">
-            <div class="section-title">
-                <h2>Proyek Berbasis Industri</h2>
-                <p>Simulasi proyek nyata dengan standar industri kreatif Indonesia</p>
-            </div>
-            
-            <div class="tabs">
-                <button class="tab-btn active" data-tab="batik">Batik Komersial</button>
-                <button class="tab-btn" data-tab="ecoprint">Ecoprint Sustainable</button>
-                <button class="tab-btn" data-tab="digital">Digital Branding</button>
-            </div>
-            
-            <div id="batik" class="tab-content active">
-                <h3><i class="fas fa-industry"></i> Proyek: Desain Batik untuk Merchandise UMKM</h3>
-                <p class="mb-4">Durasi: 2 Minggu | Kompetensi: Menghasilkan desain batik yang siap diproduksi massal</p>
                 
-                <div class="project-steps">
-                    <div class="step-item">
-                        <h4>Analisis Kebutuhan Pasar</h4>
-                        <p>Lakukan riset target pasar UMKM lokal (usia, preferensi warna, harga)</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h4>Desain Motif dengan Value Proposition</h4>
-                        <p>Buat 3 varian motif dengan filosofi budaya lokal yang modern</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h4>Prototipe Pewarnaan</h4>
-                        <p>Uji ketahanan warna dengan metode pencucian berulang sesuai SNI</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h4>Perhitungan Harga Pokok Produksi</h4>
-                        <p>Hitung biaya bahan, tenaga kerja, dan keuntungan minimal 30%</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="ecoprint" class="tab-content">
-                <h3><i class="fas fa-leaf"></i> Proyek: Ecoprint untuk Produk Fashion Sustainable</h3>
-                <p class="mb-4">Durasi: 10 Hari | Kompetensi: Membuat produk ecoprint dengan prinsip zero waste</p>
-                
-                <div class="project-steps">
-                    <div class="step-item">
-                        <h4>Pemilihan Material Ramah Lingkungan</h4>
-                        <p>Identifikasi tanaman lokal dengan kandungan tannin tinggi</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h4>Teknik Pengolahan Limbah Organik</h4>
-                        <p>Konversi limbah daun menjadi mordant alami</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h4>Sertifikasi Produk Eco-Friendly</h4>
-                        <p>Pelajari standar ekolabel untuk produk tekstil Indonesia</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h4>Pemasaran Digital</h4>
-                        <p>Buat konten edukasi proses produksi untuk media sosial</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="digital" class="tab-content">
-                <h3><i class="fas fa-mobile-alt"></i> Proyek: Digital Branding untuk Produk Seni</h3>
-                <p class="mb-4">Durasi: 1 Minggu | Kompetensi: Membuat identitas visual digital untuk produk seni</p>
-                
-                <div class="project-steps">
-                    <div class="step-item">
-                        <h4>Analisis Brand Positioning</h4>
-                        <p>Tentukan positioning produk seni di pasar digital</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h4>Desain Logo & Visual Identity</h4>
-                        <p>Buat logo dan palet warna dengan Adobe Illustrator</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h4>Konten Media Sosial</h4>
-                        <p>Produksi 5 konten Instagram dengan Canva</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h4>Analisis Performa Konten</h4>
-                        <p>Evaluasi engagement rate dan konversi penjualan</p>
-                    </div>
+                <div class="example-card">
+                    <i class="fas fa-theater-masks"></i>
+                    <h3>Seni Teater</h3>
+                    <p>Wayang kulit, drama panggung, monolog</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- K3 Seni -->
-    <section id="k3" class="bg-accent">
+    <!-- Seni Membatik dan Ecoprint -->
+    <section id="batik" class="bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Keselamatan & Kesehatan Kerja (K3) di Bengkel Seni</h2>
-                <p>Standar keamanan sesuai Permenaker No. 5 Tahun 2018 tentang K3 di Lingkungan Pendidikan</p>
+                <h2>Seni Membatik dan Ecoprint</h2>
             </div>
             
-            <div class="safety-grid">
-                <div class="safety-card">
-                    <div class="safety-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Penggunaan Bahan Kimia</h3>
-                    <p>Prosedur aman penggunaan malam batik, mordant ecoprint, dan cat berbasis solvent</p>
-                </div>
-                
-                <div class="safety-card">
-                    <div class="safety-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3>Ergonomi Kerja</h3>
-                    <p>Teknik duduk dan posisi tubuh ideal selama proses membatik/ menggambar >2 jam</p>
-                </div>
-                
-                <div class="safety-card">
-                    <div class="safety-icon">
-                        <i class="fas fa-recycle"></i>
-                    </div>
-                    <h3>Pengelolaan Limbah</h3>
-                    <p>Prosedur pemilahan limbah organik (daun) dan anorganik (wax, plastik)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Kewirausahaan Seni -->
-    <section id="bisnis" class="bg-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>Kewirausahaan Seni</h2>
-                <p>Pengembangan jiwa wirausaha sesuai modul PKKMB Kemdikbudristek</p>
-            </div>
-            
-            <div class="business-grid">
-                <div class="business-card">
-                    <h3><i class="fas fa-calculator"></i> Perhitungan Bisnis Seni</h3>
-                    <p>Rumus harga pokok produksi: <strong>Bahan + Tenaga + Overhead</strong></p>
-                    <p>Contoh: Harga jual batik tulis = (Rp 50.000 + Rp 30.000 + Rp 20.000) x 1.5 = <strong>Rp 150.000</strong></p>
-                </div>
-                
-                <div class="business-card">
-                    <h3><i class="fas fa-chart-line"></i> Analisis Pasar</h3>
-                    <p>Segmentasi pasar produk seni:
-                    <ul style="text-align: left; margin-top: 10px;">
-                        <li><strong>High Class</strong>: Harga premium, kualitas tinggi</li>
-                        <li><strong>Menengah</strong>: Harga terjangkau, desain menarik</li>
-                        <li><strong>Mass Market</strong>: Harga murah, produksi massal</li>
+            <div class="batik-ecoprint">
+                <div class="content-box">
+                    <h3><i class="fas fa-tshirt"></i> Seni Membatik</h3>
+                    <p><strong>Batik</strong> adalah teknik menghias kain dengan malam (wax) yang diaplikasikan pada pola tertentu, lalu dicelup ke dalam pewarna.</p>
+                    <p><strong>Asal-usul</strong>: Indonesia (terutama Jawa), diakui UNESCO sebagai Warisan Budaya Takbenda Dunia sejak 2009.</p>
+                    <p><strong>Jenis Batik</strong>:</p>
+                    <ul style="padding-left: 2rem; margin: 1rem 0;">
+                        <li><strong>Batik Tulis</strong>: Dikerjakan dengan canting, membutuhkan ketelitian tinggi</li>
+                        <li><strong>Batik Cap</strong>: Menggunakan stempel tembaga untuk pola berulang</li>
+                        <li><strong>Batik Printing</strong>: Teknologi modern dengan cetak digital</li>
                     </ul>
                 </div>
                 
-                <div class="business-card">
-                    <h3><i class="fas fa-hashtag"></i> Branding Digital</h3>
-                    <p>Strategi konten media sosial:
-                    <ul style="text-align: left; margin-top: 10px;">
-                        <li>Storytelling proses pembuatan</li>
-                        <li>Edukasi nilai budaya produk</li>
-                        <li>Testimoni pelanggan nyata</li>
-                        <li>Livestream proses produksi</li>
-                    </ul>
+                <div class="content-box">
+                    <h3><i class="fas fa-leaf"></i> Seni Ecoprint</h3>
+                    <p><strong>Ecoprint</strong> adalah teknik mencetak motif daun atau bunga langsung pada kain/kertas menggunakan proses alami tanpa tinta.</p>
+                    <p><strong>Proses Pembuatan</strong>:</p>
+                    <ol style="padding-left: 2rem; margin: 1rem 0;">
+                        <li>Pemilihan daun/bunga ber-tannin tinggi</li>
+                        <li>Penataan di atas kain katun/linen</li>
+                        <li>Pengikatan dengan kain pembungkus</li>
+                        <li>Pemasakan/steaming selama 1-2 jam</li>
+                        <li>Pengeringan alami</li>
+                    </ol>
+                    <p><strong>Keunggulan Ecoprint</strong>: Ramah lingkungan, zero waste, dan hasil unik untuk setiap karya</p>
+                </div>
+            </div>
+            
+            <div class="content-box">
+                <h3>Perbandingan Batik dan Ecoprint</h3>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Batik</th>
+                        <th>Ecoprint</th>
+                    </tr>
+                    <tr>
+                        <td>Bahan Utama</td>
+                        <td>Malam, kain katun/sutra</td>
+                        <td>Daun/bunga, kain alami</td>
+                    </tr>
+                    <tr>
+                        <td>Proses</td>
+                        <td>Mencanting, pencelupan warna</td>
+                        <td>Pemukulan/steaming alami</td>
+                    </tr>
+                    <tr>
+                        <td>Filosofi</td>
+                        <td>Budaya, simbolisme</td>
+                        <td>Harmoni dengan alam</td>
+                    </tr>
+                    <tr>
+                        <td>Waktu Pengerjaan</td>
+                        <td>3 hari - 1 bulan</td>
+                        <td>1-2 hari</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teknik Menggambar -->
+    <section id="teknik" class="bg-white">
+        <div class="container">
+            <div class="section-title">
+                <h2>Teknik Menggambar</h2>
+            </div>
+            
+            <div class="technique-grid">
+                <div class="content-box technique-item">
+                    <h3>Arsir</h3>
+                    <p>Membuat bayangan dengan goresan garis sejajar. Semakin rapat garis, semakin gelap bayangan.</p>
+                </div>
+                
+                <div class="content-box technique-item">
+                    <h3>Dussel</h3>
+                    <p>Teknik menggosok untuk gradasi lembut menggunakan kapur, tisu, atau blending stump.</p>
+                </div>
+                
+                <div class="content-box technique-item">
+                    <h3>Pointilisme</h3>
+                    <p>Menggunakan titik-titik kecil untuk membentuk gambar dan gradasi warna.</p>
+                </div>
+                
+                <div class="content-box technique-item">
+                    <h3>Siluet</h3>
+                    <p>Menggambar bentuk dengan outline hitam tanpa detail interior.</p>
+                </div>
+                
+                <div class="content-box technique-item">
+                    <h3>Blok Warna</h3>
+                    <p>Mengisi area dengan warna dasar sebelum menambahkan detail.</p>
+                </div>
+                
+                <div class="content-box technique-item">
+                    <h3>Perspektif</h3>
+                    <p>Ilusi kedalaman dengan garis horizon dan titik hilang (1-titik, 2-titik, 3-titik).</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portofolio Digital -->
-    <section id="portofolio" class="bg-white">
+    <!-- Ciri-ciri Seni Rupa -->
+    <section id="ciri" class="bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Pembuatan Portofolio Digital</h2>
-                <p>Standar portofolio untuk melamar magang di industri kreatif</p>
+                <h2>Ciri-ciri Seni Rupa</h2>
             </div>
             
-            <div class="curriculum-grid">
-                <div class="curriculum-card">
-                    <div class="card-header" style="background: linear-gradient(to right, #d81b60, #e91e63);">
-                        <h3><i class="fas fa-file-alt"></i> Struktur Portofolio</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Halaman profil profesional dengan photo studio</li>
-                            <li>3-5 proyek terbaik dengan deskripsi proses</li>
-                            <li>Skil teknis dan non-teknis (kolaborasi, komunikasi)</li>
-                            <li>Sertifikat kompetensi (jika ada)</li>
-                            <li>Kontak dan link media sosial profesional</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="content-box">
+                <ol style="padding-left: 2rem; margin: 1.5rem 0;">
+                    <li><strong>Keindahan (Estetika)</strong>: Menyenangkan secara visual dan menyentuh perasaan</li>
+                    <li><strong>Ekspresi Diri</strong>: Mencerminkan pikiran, emosi, atau nilai dari pencipta</li>
+                    <li><strong>Kreativitas</strong>: Karya unik dan orisinal yang tidak monoton</li>
+                    <li><strong>Materialitas</strong>: Menggunakan bahan fisik (cat, kain, logam) atau digital</li>
+                    <li><strong>Simbolisme</strong>: Memiliki makna tersembunyi atau cerminan budaya tertentu</li>
+                    <li><strong>Komposisi</strong>: Unsur visual (garis, warna, bentuk) tersusun harmonis</li>
+                    <li><strong>Fungsi</strong>: Bisa memiliki tujuan praktis (desain produk) atau murni estetis (lukisan)</li>
+                </ol>
                 
-                <div class="curriculum-card">
-                    <div class="card-header" style="background: linear-gradient(to right, #3949ab, #5c6bc0);">
-                        <h3><i class="fas fa-mobile-alt"></i> Platform Portofolio</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Behance (untuk desain grafis & digital art)</li>
-                            <li>Instagram Business (untuk produk fisik)</li>
-                            <li>Google Sites (untuk portofolio sederhana)</li>
-                            <li>Canva Portfolio (untuk pemula)</li>
-                            <li>PDF interaktif dengan hyperlink</li>
-                        </ul>
-                    </div>
-                </div>
+                <p style="margin-top: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--accent);">
+                    <em>"Seni rupa tidak hanya tentang keindahan visual, tetapi juga tentang bagaimana karya tersebut berbicara kepada penikmatnya melalui unsur dan prinsip seni."</em>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gaya dalam Seni Rupa -->
+    <section id="gaya" class="bg-white">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gaya dalam Seni Rupa</h2>
+            </div>
+            
+            <div class="content-box">
+                <table class="styles-table">
+                    <thead>
+                        <tr>
+                            <th>Gaya</th>
+                            <th>Ciri Khas</th>
+                            <th>Contoh Seniman</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Realisme</strong></td>
+                            <td>Menyerupai kenyataan tanpa idealisasi</td>
+                            <td>Gustave Courbet, Raden Saleh</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impresionisme</strong></td>
+                            <td>Menangkap kesan sesaat dengan sapuan warna cerah</td>
+                            <td>Claude Monet, Affandi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ekspresionisme</strong></td>
+                            <td>Menekankan emosi dengan distorsi bentuk/warna</td>
+                            <td>Edvard Munch, Basuki Abdullah</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kubisme</strong></td>
+                            <td>Bentuk geometris dan multi-sudut pandang</td>
+                            <td>Pablo Picasso, Sudjojono</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Abstrak</strong></td>
+                            <td>Tidak menggambarkan objek nyata</td>
+                            <td>Wassily Kandinsky, Srihadi Soedarsono</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pop Art</strong></td>
+                            <td>Mengangkat budaya populer dan komersial</td>
+                            <td>Andy Warhol, Dede Eri Supria</td>
+                        </tr>
+                    </tbody>
+                </table>
                 
-                <div class="curriculum-card">
-                    <div class="card-header" style="background: linear-gradient(to right, #00897b, #00acc1);">
-                        <h3><i class="fas fa-camera"></i> Fotografi Produk</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>Penggunaan lighting alami (pagi hari)</li>
-                            <li>Background polos dengan tekstur menarik</li>
-                            <li>Sudut pengambilan: flat lay, 45 derajat, detail close-up</li>
-                            <li>Edit warna natural tanpa over-saturation</li>
-                            <li>Watermark profesional di pojok gambar</li>
-                        </ul>
-                    </div>
-                </div>
+                <p style="margin-top: 1.5rem;">
+                    <strong>Catatan Penting</strong>: Banyak seniman kontemporer menggabungkan beberapa gaya sekaligus. Gaya seni juga dipengaruhi oleh budaya lokal - contohnya <em>Batik Kontemporer</em> yang memadukan tradisi Jawa dengan gaya modern.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h3>Studio Kreatif SMK</h3>
-                <p>Platform pembelajaran seni dan industri kreatif untuk siswa SMK kelas 10</p>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Kurikulum</h3>
-                <ul>
-                    <li><a href="#kurikulum">Materi Pembelajaran</a></li>
-                    <li><a href="#proyek">Proyek Industri</a></li>
-                    <li><a href="#k3">K3 Seni</a></li>
-                    <li><a href="#bisnis">Kewirausahaan</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Sumber Daya</h3>
-                <ul>
-                    <li><a href="#">Download Silabus SMK</a></li>
-                    <li><a href="#">Template Portofolio</a></li>
-                    <li><a href="#">Daftar Supplier Bahan Seni</a></li>
-                    <li><a href="#">Kontak Industri Mitra</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            <p>&copy; 2025 Studio Kreatif SMK - Dikembangkan untuk mendukung Merdeka Belajar Kampus Merdeka (MBKM)</p>
-            <p>Dokumen ini selaras dengan Permendikbud No. 7 Tahun 2022 tentang Standar Kompetensi Lulusan SMK</p>
+        <div class="container">
+            <p>&copy; 2025 Kisi-Kisi Seni Rupa SMA/SMK. Materi disusun sesuai kurikulum Kemdikbudristek</p>
+            <p>Untuk pembelajaran internal - tidak untuk komersial tanpa izin</p>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Tab functionality for projects
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons and contents
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    // Show corresponding content
-                    const tabId = this.getAttribute('data-tab');
-                    document.getElementById(tabId).classList.add('active');
-                });
-            });
-            
             // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
@@ -992,29 +609,6 @@
                         });
                     }
                 });
-            });
-            
-            // Animation for curriculum cards on scroll
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            document.querySelectorAll('.curriculum-card').forEach(card => {
-                card.style.opacity = 0;
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
             });
         });
     </script>
