@@ -2,8 +2,8 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materi Seni Rupa SMA/SMK - Kurikulum Lengkap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Materi Seni Rupa - Mobile Responsive</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -28,6 +28,19 @@
             background-color: #fafafa;
             color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Mobile-first navigation */
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            display: none;
         }
         
         header {
@@ -36,7 +49,7 @@
             padding: 1rem 0;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         
@@ -46,15 +59,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
+            position: relative;
         }
         
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
         
         .logo i {
@@ -65,34 +79,38 @@
             display: flex;
             list-style: none;
             gap: 1.2rem;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transform: translateY(-150%);
+            transition: transform 0.3s ease;
+            z-index: 999;
+        }
+        
+        .nav-links.active {
+            transform: translateY(0);
         }
         
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            padding: 0.5rem 0;
-            position: relative;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover::after {
+            padding: 0.8rem 0;
+            font-size: 1.1rem;
+            text-align: center;
             width: 100%;
         }
         
         .hero {
             background: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
-            height: 70vh;
+            height: 60vh;
+            min-height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -112,43 +130,45 @@
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 90%;
             z-index: 1;
-            padding: 2rem;
+            padding: 1.5rem;
         }
         
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.3;
         }
         
         .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
             font-weight: 300;
         }
         
         section {
-            padding: 4.5rem 2rem;
+            padding: 3rem 1.5rem;
         }
         
         .container {
             max-width: 1100px;
             margin: 0 auto;
+            width: 100%;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
         
         .section-title h2 {
-            font-size: 2.3rem;
+            font-size: 1.8rem;
             color: var(--primary);
             position: relative;
             display: inline-block;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
         
         .section-title h2::after {
@@ -157,7 +177,7 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 60px;
             height: 3px;
             background: var(--accent);
             border-radius: 3px;
@@ -165,11 +185,12 @@
         
         .content-box {
             background: white;
-            border-radius: 15px;
-            padding: 2rem;
+            border-radius: 16px;
+            padding: 1.8rem;
             box-shadow: var(--shadow);
-            margin-bottom: 2rem;
+            margin-bottom: 1.8rem;
             transition: all 0.3s ease;
+            width: 100%;
         }
         
         .content-box:hover {
@@ -178,51 +199,66 @@
         
         .content-box h3 {
             color: var(--secondary);
-            margin-bottom: 1.2rem;
-            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         
         .content-box h4 {
             color: var(--primary);
-            margin: 1rem 0 0.8rem;
-            font-size: 1.3rem;
+            margin: 0.8rem 0 0.6rem;
+            font-size: 1.2rem;
         }
         
         .philosopher-card {
-            background: #f5f5f5;
+            background: #f8f9fa;
             border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.2rem;
-            border-left: 4px solid var(--accent);
+            padding: 1.3rem;
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--accent);
+            transition: all 0.2s ease;
+        }
+        
+        .philosopher-card:hover {
+            background: #e8eaf6;
+            transform: translateX(5px);
         }
         
         .philosopher-card h5 {
             color: var(--dark);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
         
-        .definition-grid {
+        /* Responsive Grids */
+        .definition-grid,
+        .style-grid,
+        .dimension-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.8rem;
-            margin-top: 1.5rem;
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+        }
+        
+        .comparison-table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1.8rem 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-radius: 10px;
-            overflow: hidden;
+            min-width: 600px;
         }
         
         .comparison-table th, .comparison-table td {
-            padding: 1rem;
+            padding: 0.9rem;
             text-align: left;
             border-bottom: 1px solid #e0e0e0;
         }
@@ -231,99 +267,194 @@
             background: var(--primary);
             color: white;
             font-weight: 600;
+            position: sticky;
+            top: 0;
         }
         
         .comparison-table tr:hover {
             background: #f5f5f5;
         }
         
-        .style-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
         .style-card {
             border: 1px solid #e0e0e0;
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.3rem;
             transition: all 0.3s ease;
+            background: white;
         }
         
         .style-card:hover {
             border-color: var(--accent);
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
         .style-card h4 {
             color: var(--secondary);
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-        
-        .style-card ul {
-            padding-left: 1.5rem;
-            margin-top: 0.8rem;
-        }
-        
-        .dimension-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            gap: 6px;
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
         }
         
         .dimension-card {
             text-align: center;
-            padding: 1.8rem;
-            border-radius: 15px;
+            padding: 1.5rem;
+            border-radius: 14px;
             background: linear-gradient(135deg, #e3f2fd, #bbdefb);
             transition: all 0.3s ease;
         }
         
         .dimension-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
         }
         
         .dimension-card i {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
         
         .dimension-card h3 {
             color: var(--dark);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
+            font-size: 1.3rem;
         }
         
         footer {
             background: var(--dark);
-            color: white;
+            color: #e0e0e0;
             text-align: center;
-            padding: 2.5rem;
-            margin-top: 3rem;
+            padding: 2rem 1.5rem;
+            margin-top: 2.5rem;
         }
         
-        @media (max-width: 768px) {
-            .nav-links {
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Mobile Responsive Design */
+        @media (min-width: 768px) {
+            .mobile-menu-btn {
                 display: none;
             }
             
+            .nav-links {
+                display: flex !important;
+                position: static;
+                background: transparent;
+                flex-direction: row;
+                box-shadow: none;
+                transform: none;
+                width: auto;
+                padding: 0;
+            }
+            
+            .nav-links a {
+                text-align: left;
+                padding: 0.5rem 0;
+                width: auto;
+            }
+            
+            .hero {
+                height: 70vh;
+                min-height: 400px;
+            }
+            
             .hero h1 {
-                font-size: 2.3rem;
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.25rem;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            section {
+                padding: 4.5rem 2rem;
             }
             
             .section-title h2 {
-                font-size: 1.8rem;
+                font-size: 2.3rem;
             }
             
-            .definition-grid, .style-grid, .dimension-grid {
-                grid-template-columns: 1fr;
+            .content-box {
+                padding: 2rem;
             }
+            
+            .definition-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .style-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            .dimension-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Touch-friendly elements */
+        .nav-links a,
+        .btn,
+        .style-card,
+        .dimension-card {
+            touch-action: manipulation;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+            font-size: 1rem;
+            margin: 0.5rem;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+        
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Prevent text size adjustment on mobile */
+        body {
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        
+        /* Fix for iOS Safari */
+        input, textarea, select, button {
+            font-size: 16px;
+            -webkit-appearance: none;
         }
     </style>
 </head>
@@ -333,9 +464,12 @@
         <nav class="navbar">
             <div class="logo">
                 <i class="fas fa-palette"></i>
-                <span>Materi Seni Rupa SMA/SMK</span>
+                <span>Seni Rupa SMA/SMK</span>
             </div>
-            <ul class="nav-links">
+            <button class="mobile-menu-btn" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#definisi">Definisi Seni</a></li>
                 <li><a href="#senirupa">Seni Rupa</a></li>
                 <li><a href="#desain">Desain</a></li>
@@ -348,8 +482,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Materi Lengkap Seni Rupa Kurikulum SMA/SMK</h1>
-            <p>Definisi seni menurut para ahli, seni rupa, desain, perbedaan seni-desain, dan macam-macam gaya seni rupa</p>
+            <h1>Materi Seni Rupa</h1>
+            <p>Kurikulum lengkap untuk SMA/SMK: definisi seni, seni rupa, desain, dan gaya seni</p>
         </div>
     </section>
 
@@ -357,29 +491,29 @@
     <section id="definisi" class="bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Definisi Seni Menurut Para Ahli</h2>
+                <h2>Definisi Seni</h2>
             </div>
             
             <div class="content-box">
                 <div class="philosopher-card">
                     <h5><i class="fas fa-user"></i> Plato & Rousseau</h5>
-                    <p><strong>Plato</strong>: Seni adalah tiruan (mimesis) dari dunia inderawi yang pada dasarnya tidak sempurna. Karya seni hanyalah bayangan dari bayangan ide-ide sempurna.</p>
-                    <p><strong>Rousseau</strong>: Seni adalah ekspresi keindahan alam yang murni dan spontan, lahir dari perasaan manusia yang tidak dibuat-buat.</p>
+                    <p><strong>Plato</strong>: Seni adalah tiruan (mimesis) dari dunia inderawi yang pada dasarnya tidak sempurna.</p>
+                    <p><strong>Rousseau</strong>: Seni adalah ekspresi keindahan alam yang murni dan spontan.</p>
                 </div>
                 
                 <div class="philosopher-card">
                     <h5><i class="fas fa-user"></i> Aristoteles</h5>
-                    <p>Seni adalah aktivitas meniru (mimesis) alam, tetapi bukan sekadar duplikasi. Seniman menambahkan interpretasi dan makna, sehingga karya seni memiliki nilai edukasi dan katarsis (pemurnian jiwa).</p>
+                    <p>Seni adalah aktivitas meniru alam dengan interpretasi dan makna, memiliki nilai edukasi dan katarsis.</p>
                 </div>
                 
                 <div class="philosopher-card">
                     <h5><i class="fas fa-user"></i> Susanne K. Langer</h5>
-                    <p>Seni adalah bahasa simbolis yang mengekspresikan perasaan manusia. Karya seni adalah "wujud simbolik dari kehidupan emosional" yang tidak bisa diungkapkan dengan kata-kata.</p>
+                    <p>Seni adalah bahasa simbolis yang mengekspresikan perasaan manusia melalui wujud simbolik.</p>
                 </div>
                 
                 <div class="philosopher-card">
                     <h5><i class="fas fa-user"></i> Soedarso SP</h5>
-                    <p>Seni adalah proses penciptaan yang menghasilkan bentuk-bentuk atau objek-objek yang bermakna, baik secara formal maupun kontekstual, yang memenuhi fungsi estetis dan komunikatif.</p>
+                    <p>Seni adalah proses penciptaan yang menghasilkan bentuk-bentuk bermakna secara formal dan kontekstual.</p>
                 </div>
             </div>
         </div>
@@ -389,37 +523,35 @@
     <section id="senirupa" class="bg-white">
         <div class="container">
             <div class="section-title">
-                <h2>Definisi Seni Rupa</h2>
+                <h2>Seni Rupa</h2>
             </div>
             
             <div class="content-box">
                 <h3><i class="fas fa-paint-brush"></i> Menurut Marian L. Davis</h3>
-                <p>"Seni rupa adalah manifestasi perasaan manusia yang divisualisasikan melalui media titik, garis, bidang, bentuk, volume, warna, dan tekstur dengan prinsip harmoni, kontras, irama, keseimbangan, dan komposisi."</p>
+                <p>"Seni rupa adalah manifestasi perasaan manusia yang divisualisasikan melalui media titik, garis, bidang, bentuk, volume, warna, dan tekstur."</p>
                 
-                <h3 class="mt-4">Berdasarkan Wujud Fisiknya</h3>
+                <h3 class="mt-4">Berdasarkan Wujud Fisik</h3>
                 <div class="dimension-grid">
                     <div class="dimension-card">
                         <i class="fas fa-square"></i>
-                        <h3>Seni Rupa 2 Dimensi</h3>
+                        <h3>2 Dimensi</h3>
                         <p>Hanya memiliki panjang dan lebar</p>
-                        <ul style="text-align: left; margin-top: 10px; padding-left: 20px;">
+                        <ul style="text-align: left; margin-top: 8px; padding-left: 20px; font-size: 0.95rem;">
                             <li>Lukisan</li>
                             <li>Gambar</li>
                             <li>Seni grafis</li>
                             <li>Foto</li>
-                            <li>Motif hias</li>
                         </ul>
                     </div>
                     
                     <div class="dimension-card">
                         <i class="fas fa-cube"></i>
-                        <h3>Seni Rupa 3 Dimensi</h3>
-                        <p>Memiliki panjang, lebar, dan tinggi</p>
-                        <ul style="text-align: left; margin-top: 10px; padding-left: 20px;">
+                        <h3>3 Dimensi</h3>
+                        <p>Memiliki panjang, lebar, tinggi</p>
+                        <ul style="text-align: left; margin-top: 8px; padding-left: 20px; font-size: 0.95rem;">
                             <li>Patung</li>
                             <li>Gerabah</li>
                             <li>Relief</li>
-                            <li>Seni kriya</li>
                             <li>Arsitektur</li>
                         </ul>
                     </div>
@@ -432,33 +564,33 @@
     <section id="desain" class="bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Pengertian Desain</h2>
+                <h2>Desain</h2>
             </div>
             
             <div class="content-box">
-                <h3><i class="fas fa-lightbulb"></i> Definisi Desain</h3>
-                <p>Desain adalah proses perencanaan dalam bentuk dua dimensi maupun tiga dimensi untuk menciptakan objek, sistem, atau komunikasi visual yang memecahkan masalah spesifik dengan pertimbangan fungsional, estetis, ekonomis, dan kontekstual.</p>
+                <h3><i class="fas fa-lightbulb"></i> Definisi</h3>
+                <p>Desain adalah proses perencanaan untuk menciptakan objek atau sistem yang memecahkan masalah dengan pertimbangan fungsional, estetis, ekonomis, dan kontekstual.</p>
                 
                 <h3 class="mt-4">Fungsi Desain</h3>
                 <div class="definition-grid">
-                    <div class="content-box" style="background: #e8f5e9; border: 1px solid #4caf50;">
-                        <h4><i class="fas fa-tools"></i> Fungsi Praktis</h4>
-                        <p>Memenuhi kebutuhan fungsional pengguna, seperti ergonomi kursi, daya tampung tas, atau kemudahan penggunaan aplikasi.</p>
+                    <div class="style-card">
+                        <h4><i class="fas fa-tools"></i> Praktis</h4>
+                        <p>Memenuhi kebutuhan fungsional pengguna seperti ergonomi dan kemudahan penggunaan.</p>
                     </div>
                     
-                    <div class="content-box" style="background: #e3f2fd; border: 1px solid #2196f3;">
-                        <h4><i class="fas fa-palette"></i> Fungsi Estetis</h4>
-                        <p>Memberikan keindahan visual dan pengalaman emosional positif melalui komposisi warna, bentuk, dan tekstur.</p>
+                    <div class="style-card">
+                        <h4><i class="fas fa-palette"></i> Estetis</h4>
+                        <p>Memberikan keindahan visual dan pengalaman emosional positif melalui komposisi warna dan bentuk.</p>
                     </div>
                     
-                    <div class="content-box" style="background: #fff8e1; border: 1px solid #ff9800;">
-                        <h4><i class="fas fa-bullhorn"></i> Fungsi Komunikasi</h4>
-                        <p>Menyampaikan pesan atau informasi secara efektif, seperti logo perusahaan atau poster kampanye.</p>
+                    <div class="style-card">
+                        <h4><i class="fas fa-bullhorn"></i> Komunikasi</h4>
+                        <p>Menyampaikan pesan atau informasi secara efektif seperti logo perusahaan atau poster.</p>
                     </div>
                     
-                    <div class="content-box" style="background: #fce4ec; border: 1px solid #e91e63;">
-                        <h4><i class="fas fa-recycle"></i> Fungsi Ekologis</h4>
-                        <p>Mempertimbangkan keberlanjutan lingkungan melalui pemilihan material ramah lingkungan dan proses produksi minimal limbah.</p>
+                    <div class="style-card">
+                        <h4><i class="fas fa-recycle"></i> Ekologis</h4>
+                        <p>Mempertimbangkan keberlanjutan lingkungan melalui pemilihan material ramah lingkungan.</p>
                     </div>
                 </div>
             </div>
@@ -469,101 +601,80 @@
     <section id="perbedaan" class="bg-white">
         <div class="container">
             <div class="section-title">
-                <h2>Perbedaan Seni dan Desain</h2>
+                <h2>Seni vs Desain</h2>
             </div>
             
             <div class="content-box">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Kriteria</th>
-                            <th>Seni</th>
-                            <th>Desain</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Tujuan Utama</strong></td>
-                            <td>Ekspresi diri & keindahan estetis</td>
-                            <td>Memecahkan masalah spesifik</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Fokus</strong></td>
-                            <td>Proses kreatif pribadi</td>
-                            <td>Hasil yang fungsional</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Penilaian</strong></td>
-                            <td>Subjektif (selera pribadi)</td>
-                            <td>Objektif (efektivitas solusi)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Batasan</strong></td>
-                            <td>Relatif bebas tanpa batasan</td>
-                            <td>Terikat kebutuhan pengguna & konteks</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Waktu</strong></td>
-                            <td>Berkembang sepanjang hidup seniman</td>
-                            <td>Dibatasi tenggat waktu proyek</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Contoh</strong></td>
-                            <td>Lukisan ekspresionis Affandi</td>
-                            <td>Desain kursi ergonomis</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <p style="margin-top: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--accent);">
-                    <strong>Catatan:</strong> Meskipun berbeda, seni dan desain sering beririsan dalam praktik kreatif. Seorang desainer bisa menggunakan prinsip seni, dan seniman bisa mempertimbangkan aspek fungsional dalam karyanya.
-                </p>
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Kriteria</th>
+                                <th>Seni</th>
+                                <th>Desain</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tujuan</strong></td>
+                                <td>Ekspresi diri & keindahan</td>
+                                <td>Memecahkan masalah</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Penilaian</strong></td>
+                                <td>Subjektif</td>
+                                <td>Objektif</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Batasan</strong></td>
+                                <td>Relatif bebas</td>
+                                <td>Terikat kebutuhan</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Macam-macam Gaya dalam Seni Rupa -->
+    <!-- Macam-macam Gaya Seni -->
     <section id="gaya" class="bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Macam-macam Gaya dalam Seni Rupa</h2>
+                <h2>Gaya Seni Rupa</h2>
             </div>
             
             <div class="content-box">
                 <div class="style-grid">
                     <div class="style-card">
-                        <h4><i class="fas fa-monument"></i> Gaya Traditional</h4>
-                        <ul>
-                            <li><strong>Primitif</strong>: Ekspresi sederhana, bentuk dasar, sering terkait ritual (contoh: lukisan gua, seni suku pedalaman)</li>
-                            <li><strong>Klasik</strong>: Kesempurnaan proporsi, keseimbangan, dan harmoni (contoh: patung Yunani kuno, lukisan Renaissance)</li>
+                        <h4><i class="fas fa-monument"></i> Traditional</h4>
+                        <ul style="font-size: 0.95rem; padding-left: 1.5rem;">
+                            <li><strong>Primitif</strong>: Ekspresi sederhana, bentuk dasar</li>
+                            <li><strong>Klasik</strong>: Proporsi sempurna, harmoni</li>
                         </ul>
                     </div>
                     
                     <div class="style-card">
-                        <h4><i class="fas fa-portrait"></i> Gaya Modern: Representatif</h4>
-                        <ul>
-                            <li><strong>Romantisme</strong>: Emosi, keindahan alam liar, fantasi (contoh: lukisan Turner)</li>
-                            <li><strong>Naturalisme</strong>: Tiruan alam seakurat mungkin hingga detail terkecil</li>
-                            <li><strong>Realisme</strong>: Menggambarkan kehidupan nyata tanpa idealisasi (contoh: lukisan sosial Sudjojono)</li>
+                        <h4><i class="fas fa-portrait"></i> Modern: Representatif</h4>
+                        <ul style="font-size: 0.95rem; padding-left: 1.5rem;">
+                            <li><strong>Romantisme</strong>: Emosi, keindahan alam liar</li>
+                            <li><strong>Realisme</strong>: Kehidupan nyata tanpa idealisasi</li>
                         </ul>
                     </div>
                     
                     <div class="style-card">
-                        <h4><i class="fas fa-shapes"></i> Gaya Modern: Deformatif</h4>
-                        <ul>
-                            <li><strong>Surealisme</strong>: Dunia mimpi & alam bawah sadar (contoh: lukisan Dalí)</li>
-                            <li><strong>Ekspresionisme</strong>: Distorsi bentuk untuk ekspresi emosi (contoh: lukisan Edvard Munch)</li>
-                            <li><strong>Impresionisme</strong>: Kesankan cahaya & suasana sesaat (contoh: lukisan Monet)</li>
-                            <li><strong>Kubisme</strong>: Fragmentasi objek dalam bentuk geometris (contoh: karya Picasso)</li>
+                        <h4><i class="fas fa-shapes"></i> Modern: Deformatif</h4>
+                        <ul style="font-size: 0.95rem; padding-left: 1.5rem;">
+                            <li><strong>Surealisme</strong>: Dunia mimpi & alam bawah sadar</li>
+                            <li><strong>Ekspresionisme</strong>: Distorsi untuk ekspresi emosi</li>
                         </ul>
                     </div>
                     
                     <div class="style-card">
-                        <h4><i class="fas fa-draw-polygon"></i> Gaya Modern: Nonrepresentatif</h4>
-                        <ul>
-                            <li><strong>Abstrak Murni</strong>: Tidak merujuk pada objek nyata, hanya bentuk, warna, dan garis (contoh: karya Wassily Kandinsky)</li>
-                            <li><strong>Abstrak Ekspresionis</strong>: Ekspresi emosi melalui komposisi non-figuratif (contoh: lukisan Jackson Pollock)</li>
-                            <li><strong>Minimalis</strong>: Penggunaan elemen visual minimal dengan fokus pada bentuk dasar</li>
+                        <h4><i class="fas fa-draw-polygon"></i> Modern: Nonrepresentatif</h4>
+                        <ul style="font-size: 0.95rem; padding-left: 1.5rem;">
+                            <li><strong>Abstrak Murni</strong>: Tidak merujuk objek nyata</li>
+                            <li><strong>Minimalis</strong>: Elemen visual minimal</li>
                         </ul>
                     </div>
                 </div>
@@ -573,15 +684,41 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Materi Seni Rupa SMA/SMK. Disusun berdasarkan kurikulum Kemdikbudristek</p>
-            <p>Sumber: Buku teks Seni Budaya Kelas 10, Kamus Seni Rupa Indonesia, dan referensi akademis terkait</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Materi Seni Rupa SMA/SMK</p>
+            <p>Optimized for mobile learning experience</p>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for navigation links
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                const icon = this.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -591,12 +728,33 @@
                     
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
+                        // Close mobile menu if open
+                        navLinks.classList.remove('active');
+                        const icon = menuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                        
+                        // Scroll to element
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - headerHeight - 20;
+                        
                         window.scrollTo({
-                            top: targetElement.offsetTop - 80,
+                            top: offsetPosition,
                             behavior: 'smooth'
                         });
                     }
                 });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             });
         });
     </script>
