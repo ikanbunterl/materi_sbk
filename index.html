@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kisi-Kisi Seni Rupa SMA/SMK</title>
+    <title>Materi Seni Rupa SMA/SMK - Kurikulum Lengkap</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #5e35b1;
-            --secondary: #af4480;
-            --light: #f8f9fa;
+            --primary: #3f51b5;
+            --secondary: #e91e63;
+            --light: #f5f5f5;
             --dark: #212121;
-            --accent: #d4e157;
-            --shadow: 0 4px 8px rgba(0,0,0,0.1);
+            --accent: #ff9800;
+            --success: #4caf50;
+            --warning: #ff5722;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
         * {
@@ -29,13 +31,13 @@
         }
         
         header {
-            background: linear-gradient(120deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         
         .navbar {
@@ -52,7 +54,7 @@
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         
         .logo i {
@@ -62,7 +64,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
+            gap: 1.2rem;
         }
         
         .nav-links a {
@@ -89,7 +91,7 @@
         }
         
         .hero {
-            background: url('https://images.unsplash.com/photo-1503376780353-7e6e33344ee5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
+            background: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
             height: 70vh;
             display: flex;
             align-items: center;
@@ -106,7 +108,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(94, 53, 177, 0.85);
+            background: rgba(63, 81, 181, 0.85);
         }
         
         .hero-content {
@@ -116,7 +118,7 @@
         }
         
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
@@ -183,106 +185,126 @@
             gap: 10px;
         }
         
-        .content-box p {
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
+        .content-box h4 {
+            color: var(--primary);
+            margin: 1rem 0 0.8rem;
+            font-size: 1.3rem;
         }
         
-        .examples-grid {
+        .philosopher-card {
+            background: #f5f5f5;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .philosopher-card h5 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .definition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.8rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .style-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .style-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .style-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .style-card h4 {
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .style-card ul {
+            padding-left: 1.5rem;
+            margin-top: 0.8rem;
+        }
+        
+        .dimension-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
         
-        .example-card {
-            background: #f5f5f5;
-            padding: 1.5rem;
-            border-radius: 12px;
+        .dimension-card {
             text-align: center;
+            padding: 1.8rem;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
             transition: all 0.3s ease;
         }
         
-        .example-card:hover {
-            background: #e8eaf6;
-            transform: translateY(-5px);
+        .dimension-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
         
-        .example-card i {
-            font-size: 2.5rem;
+        .dimension-card i {
+            font-size: 3rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
         
-        .technique-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-        
-        .technique-item {
-            border-left: 4px solid var(--accent);
-            padding-left: 1.2rem;
-        }
-        
-        .styles-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .styles-table th, .styles-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .styles-table th {
-            background: var(--primary);
-            color: white;
-            font-weight: 600;
-        }
-        
-        .styles-table tr:hover {
-            background: #f5f5f5;
-        }
-        
-        .styles-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .batik-ecoprint {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-        
-        .comparison-table {
-            width: 100%;
-            margin: 1.5rem 0;
-        }
-        
-        .comparison-table th, .comparison-table td {
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        
-        .comparison-table th {
-            background: var(--secondary);
-            color: white;
+        .dimension-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.8rem;
         }
         
         footer {
             background: var(--dark);
             color: white;
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             margin-top: 3rem;
         }
         
@@ -298,6 +320,10 @@
             .section-title h2 {
                 font-size: 1.8rem;
             }
+            
+            .definition-grid, .style-grid, .dimension-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -307,14 +333,13 @@
         <nav class="navbar">
             <div class="logo">
                 <i class="fas fa-palette"></i>
-                <span>Kisi-Kisi Seni Rupa</span>
+                <span>Materi Seni Rupa SMA/SMK</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#pengertian">Pengertian</a></li>
-                <li><a href="#contoh">Contoh Seni</a></li>
-                <li><a href="#batik">Batik & Ecoprint</a></li>
-                <li><a href="#teknik">Teknik Gambar</a></li>
-                <li><a href="#ciri">Ciri Seni Rupa</a></li>
+                <li><a href="#definisi">Definisi Seni</a></li>
+                <li><a href="#senirupa">Seni Rupa</a></li>
+                <li><a href="#desain">Desain</a></li>
+                <li><a href="#perbedaan">Seni vs Desain</a></li>
                 <li><a href="#gaya">Gaya Seni</a></li>
             </ul>
         </nav>
@@ -323,262 +348,225 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Materi Seni Rupa SMA/SMK</h1>
-            <p>Kisi-kisi lengkap sesuai kurikulum: Pengertian seni, teknik menggambar, gaya seni rupa, dan praktik membatik/ecoprint</p>
+            <h1>Materi Lengkap Seni Rupa Kurikulum SMA/SMK</h1>
+            <p>Definisi seni menurut para ahli, seni rupa, desain, perbedaan seni-desain, dan macam-macam gaya seni rupa</p>
         </div>
     </section>
 
-    <!-- Pengertian Seni -->
-    <section id="pengertian" class="bg-light">
+    <!-- Definisi Seni -->
+    <section id="definisi" class="bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Pengertian Seni</h2>
+                <h2>Definisi Seni Menurut Para Ahli</h2>
             </div>
             
             <div class="content-box">
-                <h3><i class="fas fa-book-open"></i> Definisi Seni</h3>
-                <p><strong>Seni</strong> adalah ekspresi kreatif manusia melalui media visual, audio, atau gerak yang memiliki nilai estetika dan makna. Seni merupakan sarana untuk mengekspresikan perasaan, ide, dan pengalaman hidup.</p>
-                
-                <h3>Menurut Para Ahli:</h3>
-                <ul style="padding-left: 2rem; margin: 1.2rem 0;">
-                    <li><strong>Ki Hajar Dewantara</strong>: "Seni adalah segala perbuatan manusia yang timbul dari perasaan dan bersifat indah, sehingga menggerakkan perasaan manusia lainnya."</li>
-                    <li><strong>Aristoteles</strong>: "Seni adalah peniruan (mimesis) dari kenyataan yang disaring melalui interpretasi manusia."</li>
-                    <li><strong>John Dewey</strong>: "Seni adalah pengalaman yang menyatukan emosi, pikiran, dan lingkungan."</li>
-                </ul>
-                
-                <p><strong>Fungsi Seni</strong>:</p>
-                <ul style="padding-left: 2rem; margin: 1.2rem 0;">
-                    <li><em>Individual</em>: Sarana ekspresi diri dan aktualisasi</li>
-                    <li><em>Sosial</em>: Sarana komunikasi budaya dan identitas</li>
-                    <li><em>Pendidikan</em>: Mengembangkan kreativitas dan apresiasi estetika</li>
-                    <li><em>Komersial</em>: Potensi ekonomi melalui industri kreatif</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contoh Seni -->
-    <section id="contoh" class="bg-white">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contoh Seni</h2>
-            </div>
-            
-            <div class="examples-grid">
-                <div class="example-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Seni Rupa</h3>
-                    <p>Lukisan, patung, grafis, instalasi, seni digital</p>
+                <div class="philosopher-card">
+                    <h5><i class="fas fa-user"></i> Plato & Rousseau</h5>
+                    <p><strong>Plato</strong>: Seni adalah tiruan (mimesis) dari dunia inderawi yang pada dasarnya tidak sempurna. Karya seni hanyalah bayangan dari bayangan ide-ide sempurna.</p>
+                    <p><strong>Rousseau</strong>: Seni adalah ekspresi keindahan alam yang murni dan spontan, lahir dari perasaan manusia yang tidak dibuat-buat.</p>
                 </div>
                 
-                <div class="example-card">
-                    <i class="fas fa-music"></i>
-                    <h3>Seni Musik</h3>
-                    <p>Lagu tradisional, orkestra, musik kontemporer</p>
+                <div class="philosopher-card">
+                    <h5><i class="fas fa-user"></i> Aristoteles</h5>
+                    <p>Seni adalah aktivitas meniru (mimesis) alam, tetapi bukan sekadar duplikasi. Seniman menambahkan interpretasi dan makna, sehingga karya seni memiliki nilai edukasi dan katarsis (pemurnian jiwa).</p>
                 </div>
                 
-                <div class="example-card">
-                    <i class="fas fa-dance"></i>
-                    <h3>Seni Tari</h3>
-                    <p>Tari Saman, balet, tari modern</p>
+                <div class="philosopher-card">
+                    <h5><i class="fas fa-user"></i> Susanne K. Langer</h5>
+                    <p>Seni adalah bahasa simbolis yang mengekspresikan perasaan manusia. Karya seni adalah "wujud simbolik dari kehidupan emosional" yang tidak bisa diungkapkan dengan kata-kata.</p>
                 </div>
                 
-                <div class="example-card">
-                    <i class="fas fa-theater-masks"></i>
-                    <h3>Seni Teater</h3>
-                    <p>Wayang kulit, drama panggung, monolog</p>
+                <div class="philosopher-card">
+                    <h5><i class="fas fa-user"></i> Soedarso SP</h5>
+                    <p>Seni adalah proses penciptaan yang menghasilkan bentuk-bentuk atau objek-objek yang bermakna, baik secara formal maupun kontekstual, yang memenuhi fungsi estetis dan komunikatif.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seni Membatik dan Ecoprint -->
-    <section id="batik" class="bg-light">
+    <!-- Definisi Seni Rupa -->
+    <section id="senirupa" class="bg-white">
         <div class="container">
             <div class="section-title">
-                <h2>Seni Membatik dan Ecoprint</h2>
-            </div>
-            
-            <div class="batik-ecoprint">
-                <div class="content-box">
-                    <h3><i class="fas fa-tshirt"></i> Seni Membatik</h3>
-                    <p><strong>Batik</strong> adalah teknik menghias kain dengan malam (wax) yang diaplikasikan pada pola tertentu, lalu dicelup ke dalam pewarna.</p>
-                    <p><strong>Asal-usul</strong>: Indonesia (terutama Jawa), diakui UNESCO sebagai Warisan Budaya Takbenda Dunia sejak 2009.</p>
-                    <p><strong>Jenis Batik</strong>:</p>
-                    <ul style="padding-left: 2rem; margin: 1rem 0;">
-                        <li><strong>Batik Tulis</strong>: Dikerjakan dengan canting, membutuhkan ketelitian tinggi</li>
-                        <li><strong>Batik Cap</strong>: Menggunakan stempel tembaga untuk pola berulang</li>
-                        <li><strong>Batik Printing</strong>: Teknologi modern dengan cetak digital</li>
-                    </ul>
-                </div>
-                
-                <div class="content-box">
-                    <h3><i class="fas fa-leaf"></i> Seni Ecoprint</h3>
-                    <p><strong>Ecoprint</strong> adalah teknik mencetak motif daun atau bunga langsung pada kain/kertas menggunakan proses alami tanpa tinta.</p>
-                    <p><strong>Proses Pembuatan</strong>:</p>
-                    <ol style="padding-left: 2rem; margin: 1rem 0;">
-                        <li>Pemilihan daun/bunga ber-tannin tinggi</li>
-                        <li>Penataan di atas kain katun/linen</li>
-                        <li>Pengikatan dengan kain pembungkus</li>
-                        <li>Pemasakan/steaming selama 1-2 jam</li>
-                        <li>Pengeringan alami</li>
-                    </ol>
-                    <p><strong>Keunggulan Ecoprint</strong>: Ramah lingkungan, zero waste, dan hasil unik untuk setiap karya</p>
-                </div>
+                <h2>Definisi Seni Rupa</h2>
             </div>
             
             <div class="content-box">
-                <h3>Perbandingan Batik dan Ecoprint</h3>
+                <h3><i class="fas fa-paint-brush"></i> Menurut Marian L. Davis</h3>
+                <p>"Seni rupa adalah manifestasi perasaan manusia yang divisualisasikan melalui media titik, garis, bidang, bentuk, volume, warna, dan tekstur dengan prinsip harmoni, kontras, irama, keseimbangan, dan komposisi."</p>
+                
+                <h3 class="mt-4">Berdasarkan Wujud Fisiknya</h3>
+                <div class="dimension-grid">
+                    <div class="dimension-card">
+                        <i class="fas fa-square"></i>
+                        <h3>Seni Rupa 2 Dimensi</h3>
+                        <p>Hanya memiliki panjang dan lebar</p>
+                        <ul style="text-align: left; margin-top: 10px; padding-left: 20px;">
+                            <li>Lukisan</li>
+                            <li>Gambar</li>
+                            <li>Seni grafis</li>
+                            <li>Foto</li>
+                            <li>Motif hias</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dimension-card">
+                        <i class="fas fa-cube"></i>
+                        <h3>Seni Rupa 3 Dimensi</h3>
+                        <p>Memiliki panjang, lebar, dan tinggi</p>
+                        <ul style="text-align: left; margin-top: 10px; padding-left: 20px;">
+                            <li>Patung</li>
+                            <li>Gerabah</li>
+                            <li>Relief</li>
+                            <li>Seni kriya</li>
+                            <li>Arsitektur</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengertian Desain -->
+    <section id="desain" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pengertian Desain</h2>
+            </div>
+            
+            <div class="content-box">
+                <h3><i class="fas fa-lightbulb"></i> Definisi Desain</h3>
+                <p>Desain adalah proses perencanaan dalam bentuk dua dimensi maupun tiga dimensi untuk menciptakan objek, sistem, atau komunikasi visual yang memecahkan masalah spesifik dengan pertimbangan fungsional, estetis, ekonomis, dan kontekstual.</p>
+                
+                <h3 class="mt-4">Fungsi Desain</h3>
+                <div class="definition-grid">
+                    <div class="content-box" style="background: #e8f5e9; border: 1px solid #4caf50;">
+                        <h4><i class="fas fa-tools"></i> Fungsi Praktis</h4>
+                        <p>Memenuhi kebutuhan fungsional pengguna, seperti ergonomi kursi, daya tampung tas, atau kemudahan penggunaan aplikasi.</p>
+                    </div>
+                    
+                    <div class="content-box" style="background: #e3f2fd; border: 1px solid #2196f3;">
+                        <h4><i class="fas fa-palette"></i> Fungsi Estetis</h4>
+                        <p>Memberikan keindahan visual dan pengalaman emosional positif melalui komposisi warna, bentuk, dan tekstur.</p>
+                    </div>
+                    
+                    <div class="content-box" style="background: #fff8e1; border: 1px solid #ff9800;">
+                        <h4><i class="fas fa-bullhorn"></i> Fungsi Komunikasi</h4>
+                        <p>Menyampaikan pesan atau informasi secara efektif, seperti logo perusahaan atau poster kampanye.</p>
+                    </div>
+                    
+                    <div class="content-box" style="background: #fce4ec; border: 1px solid #e91e63;">
+                        <h4><i class="fas fa-recycle"></i> Fungsi Ekologis</h4>
+                        <p>Mempertimbangkan keberlanjutan lingkungan melalui pemilihan material ramah lingkungan dan proses produksi minimal limbah.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perbedaan Seni dan Desain -->
+    <section id="perbedaan" class="bg-white">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perbedaan Seni dan Desain</h2>
+            </div>
+            
+            <div class="content-box">
                 <table class="comparison-table">
-                    <tr>
-                        <th>Aspek</th>
-                        <th>Batik</th>
-                        <th>Ecoprint</th>
-                    </tr>
-                    <tr>
-                        <td>Bahan Utama</td>
-                        <td>Malam, kain katun/sutra</td>
-                        <td>Daun/bunga, kain alami</td>
-                    </tr>
-                    <tr>
-                        <td>Proses</td>
-                        <td>Mencanting, pencelupan warna</td>
-                        <td>Pemukulan/steaming alami</td>
-                    </tr>
-                    <tr>
-                        <td>Filosofi</td>
-                        <td>Budaya, simbolisme</td>
-                        <td>Harmoni dengan alam</td>
-                    </tr>
-                    <tr>
-                        <td>Waktu Pengerjaan</td>
-                        <td>3 hari - 1 bulan</td>
-                        <td>1-2 hari</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- Teknik Menggambar -->
-    <section id="teknik" class="bg-white">
-        <div class="container">
-            <div class="section-title">
-                <h2>Teknik Menggambar</h2>
-            </div>
-            
-            <div class="technique-grid">
-                <div class="content-box technique-item">
-                    <h3>Arsir</h3>
-                    <p>Membuat bayangan dengan goresan garis sejajar. Semakin rapat garis, semakin gelap bayangan.</p>
-                </div>
-                
-                <div class="content-box technique-item">
-                    <h3>Dussel</h3>
-                    <p>Teknik menggosok untuk gradasi lembut menggunakan kapur, tisu, atau blending stump.</p>
-                </div>
-                
-                <div class="content-box technique-item">
-                    <h3>Pointilisme</h3>
-                    <p>Menggunakan titik-titik kecil untuk membentuk gambar dan gradasi warna.</p>
-                </div>
-                
-                <div class="content-box technique-item">
-                    <h3>Siluet</h3>
-                    <p>Menggambar bentuk dengan outline hitam tanpa detail interior.</p>
-                </div>
-                
-                <div class="content-box technique-item">
-                    <h3>Blok Warna</h3>
-                    <p>Mengisi area dengan warna dasar sebelum menambahkan detail.</p>
-                </div>
-                
-                <div class="content-box technique-item">
-                    <h3>Perspektif</h3>
-                    <p>Ilusi kedalaman dengan garis horizon dan titik hilang (1-titik, 2-titik, 3-titik).</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ciri-ciri Seni Rupa -->
-    <section id="ciri" class="bg-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>Ciri-ciri Seni Rupa</h2>
-            </div>
-            
-            <div class="content-box">
-                <ol style="padding-left: 2rem; margin: 1.5rem 0;">
-                    <li><strong>Keindahan (Estetika)</strong>: Menyenangkan secara visual dan menyentuh perasaan</li>
-                    <li><strong>Ekspresi Diri</strong>: Mencerminkan pikiran, emosi, atau nilai dari pencipta</li>
-                    <li><strong>Kreativitas</strong>: Karya unik dan orisinal yang tidak monoton</li>
-                    <li><strong>Materialitas</strong>: Menggunakan bahan fisik (cat, kain, logam) atau digital</li>
-                    <li><strong>Simbolisme</strong>: Memiliki makna tersembunyi atau cerminan budaya tertentu</li>
-                    <li><strong>Komposisi</strong>: Unsur visual (garis, warna, bentuk) tersusun harmonis</li>
-                    <li><strong>Fungsi</strong>: Bisa memiliki tujuan praktis (desain produk) atau murni estetis (lukisan)</li>
-                </ol>
-                
-                <p style="margin-top: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--accent);">
-                    <em>"Seni rupa tidak hanya tentang keindahan visual, tetapi juga tentang bagaimana karya tersebut berbicara kepada penikmatnya melalui unsur dan prinsip seni."</em>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gaya dalam Seni Rupa -->
-    <section id="gaya" class="bg-white">
-        <div class="container">
-            <div class="section-title">
-                <h2>Gaya dalam Seni Rupa</h2>
-            </div>
-            
-            <div class="content-box">
-                <table class="styles-table">
                     <thead>
                         <tr>
-                            <th>Gaya</th>
-                            <th>Ciri Khas</th>
-                            <th>Contoh Seniman</th>
+                            <th>Kriteria</th>
+                            <th>Seni</th>
+                            <th>Desain</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Realisme</strong></td>
-                            <td>Menyerupai kenyataan tanpa idealisasi</td>
-                            <td>Gustave Courbet, Raden Saleh</td>
+                            <td><strong>Tujuan Utama</strong></td>
+                            <td>Ekspresi diri & keindahan estetis</td>
+                            <td>Memecahkan masalah spesifik</td>
                         </tr>
                         <tr>
-                            <td><strong>Impresionisme</strong></td>
-                            <td>Menangkap kesan sesaat dengan sapuan warna cerah</td>
-                            <td>Claude Monet, Affandi</td>
+                            <td><strong>Fokus</strong></td>
+                            <td>Proses kreatif pribadi</td>
+                            <td>Hasil yang fungsional</td>
                         </tr>
                         <tr>
-                            <td><strong>Ekspresionisme</strong></td>
-                            <td>Menekankan emosi dengan distorsi bentuk/warna</td>
-                            <td>Edvard Munch, Basuki Abdullah</td>
+                            <td><strong>Penilaian</strong></td>
+                            <td>Subjektif (selera pribadi)</td>
+                            <td>Objektif (efektivitas solusi)</td>
                         </tr>
                         <tr>
-                            <td><strong>Kubisme</strong></td>
-                            <td>Bentuk geometris dan multi-sudut pandang</td>
-                            <td>Pablo Picasso, Sudjojono</td>
+                            <td><strong>Batasan</strong></td>
+                            <td>Relatif bebas tanpa batasan</td>
+                            <td>Terikat kebutuhan pengguna & konteks</td>
                         </tr>
                         <tr>
-                            <td><strong>Abstrak</strong></td>
-                            <td>Tidak menggambarkan objek nyata</td>
-                            <td>Wassily Kandinsky, Srihadi Soedarsono</td>
+                            <td><strong>Waktu</strong></td>
+                            <td>Berkembang sepanjang hidup seniman</td>
+                            <td>Dibatasi tenggat waktu proyek</td>
                         </tr>
                         <tr>
-                            <td><strong>Pop Art</strong></td>
-                            <td>Mengangkat budaya populer dan komersial</td>
-                            <td>Andy Warhol, Dede Eri Supria</td>
+                            <td><strong>Contoh</strong></td>
+                            <td>Lukisan ekspresionis Affandi</td>
+                            <td>Desain kursi ergonomis</td>
                         </tr>
                     </tbody>
                 </table>
                 
-                <p style="margin-top: 1.5rem;">
-                    <strong>Catatan Penting</strong>: Banyak seniman kontemporer menggabungkan beberapa gaya sekaligus. Gaya seni juga dipengaruhi oleh budaya lokal - contohnya <em>Batik Kontemporer</em> yang memadukan tradisi Jawa dengan gaya modern.
+                <p style="margin-top: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--accent);">
+                    <strong>Catatan:</strong> Meskipun berbeda, seni dan desain sering beririsan dalam praktik kreatif. Seorang desainer bisa menggunakan prinsip seni, dan seniman bisa mempertimbangkan aspek fungsional dalam karyanya.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Macam-macam Gaya dalam Seni Rupa -->
+    <section id="gaya" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Macam-macam Gaya dalam Seni Rupa</h2>
+            </div>
+            
+            <div class="content-box">
+                <div class="style-grid">
+                    <div class="style-card">
+                        <h4><i class="fas fa-monument"></i> Gaya Traditional</h4>
+                        <ul>
+                            <li><strong>Primitif</strong>: Ekspresi sederhana, bentuk dasar, sering terkait ritual (contoh: lukisan gua, seni suku pedalaman)</li>
+                            <li><strong>Klasik</strong>: Kesempurnaan proporsi, keseimbangan, dan harmoni (contoh: patung Yunani kuno, lukisan Renaissance)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="style-card">
+                        <h4><i class="fas fa-portrait"></i> Gaya Modern: Representatif</h4>
+                        <ul>
+                            <li><strong>Romantisme</strong>: Emosi, keindahan alam liar, fantasi (contoh: lukisan Turner)</li>
+                            <li><strong>Naturalisme</strong>: Tiruan alam seakurat mungkin hingga detail terkecil</li>
+                            <li><strong>Realisme</strong>: Menggambarkan kehidupan nyata tanpa idealisasi (contoh: lukisan sosial Sudjojono)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="style-card">
+                        <h4><i class="fas fa-shapes"></i> Gaya Modern: Deformatif</h4>
+                        <ul>
+                            <li><strong>Surealisme</strong>: Dunia mimpi & alam bawah sadar (contoh: lukisan Dalí)</li>
+                            <li><strong>Ekspresionisme</strong>: Distorsi bentuk untuk ekspresi emosi (contoh: lukisan Edvard Munch)</li>
+                            <li><strong>Impresionisme</strong>: Kesankan cahaya & suasana sesaat (contoh: lukisan Monet)</li>
+                            <li><strong>Kubisme</strong>: Fragmentasi objek dalam bentuk geometris (contoh: karya Picasso)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="style-card">
+                        <h4><i class="fas fa-draw-polygon"></i> Gaya Modern: Nonrepresentatif</h4>
+                        <ul>
+                            <li><strong>Abstrak Murni</strong>: Tidak merujuk pada objek nyata, hanya bentuk, warna, dan garis (contoh: karya Wassily Kandinsky)</li>
+                            <li><strong>Abstrak Ekspresionis</strong>: Ekspresi emosi melalui komposisi non-figuratif (contoh: lukisan Jackson Pollock)</li>
+                            <li><strong>Minimalis</strong>: Penggunaan elemen visual minimal dengan fokus pada bentuk dasar</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -586,8 +574,8 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Kisi-Kisi Seni Rupa SMA/SMK. Materi disusun sesuai kurikulum Kemdikbudristek</p>
-            <p>Untuk pembelajaran internal - tidak untuk komersial tanpa izin</p>
+            <p>&copy; 2025 Materi Seni Rupa SMA/SMK. Disusun berdasarkan kurikulum Kemdikbudristek</p>
+            <p>Sumber: Buku teks Seni Budaya Kelas 10, Kamus Seni Rupa Indonesia, dan referensi akademis terkait</p>
         </div>
     </footer>
 
